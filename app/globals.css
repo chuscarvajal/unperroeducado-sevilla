@@ -1,0 +1,39 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-dark: #2E8B57;
+  --c-mid: #3CB371;
+  --c-light: #55DB90;
+  --c-pale: #f0faf5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; color: #555; background: #fff; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+@layer components {
+  .btn-green {
+    @apply inline-flex items-center justify-center bg-[#3CB371] text-white font-bold text-sm px-7 py-3 rounded-lg hover:bg-[#2E8B57] active:scale-95 transition-all duration-200 focus-visible:outline-none;
+    box-shadow: #2E8B57 6px 0 0 0;
+  }
+  .btn-outline-green {
+    @apply inline-flex items-center justify-center border-2 border-[#3CB371] text-[#3CB371] font-bold text-sm px-7 py-[10px] rounded-lg hover:bg-[#3CB371] hover:text-white active:scale-95 transition-all duration-200;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  width: max-content;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
