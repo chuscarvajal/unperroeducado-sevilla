@@ -1,42 +1,37 @@
-﻿export default function FeatureSplit() {
+const pasos = [
+  { icon: "🔍", title: "Entiendo a tu perro", desc: "Primero observo y escucho. Analizo su historia, sus emociones y sus detonantes. Sin juzgar, sin prisas." },
+  { icon: "🧠", title: "Diseño el plan", desc: "Creo un programa a medida basado en ciencia del comportamiento. Cada ejercicio tiene un por qué y un para qué concreto." },
+  { icon: "🏠", title: "Construimos juntos", desc: "Te enseño a ti también. Quiero que entiendas a tu perro y puedas continuar el trabajo más allá de las sesiones." },
+];
+
+export default function FeatureSplit() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-20 lg:py-28 bg-[#FFF9F4]">
       <div className="wrap">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="text-center mb-14">
+          <span className="section-tag">Método positivo</span>
+          <h2 className="leading-tight" style={{ fontSize: "clamp(28px, 4vw, 46px)" }}>
+            Entreno desde <br />
+            <em className="text-[#D4522A] not-italic">la comprensión</em>
+          </h2>
+          <p className="text-[#6B4C3A] mt-4 max-w-xl mx-auto">
+            No busco obediencia ciega. Busco un perro que entienda, confíe y elija hacer lo correcto.
+          </p>
+        </div>
 
-          {/* Izquierda: grid 3 imágenes */}
-          <div className="grid grid-cols-2 gap-3 lg:gap-4">
-            {/* Columna izquierda: 2 imágenes pequeñas apiladas */}
-            <div className="flex flex-col gap-3 lg:gap-4">
-              <img
-                src="/images/programa-cachorro.webp"
-                alt="Adiestrador con cachorro labrador en sesión positiva"
-                className="w-full h-[160px] lg:h-[195px] object-cover rounded-2xl"
-              />
-              <img
-                src="/images/programa-agility.webp"
-                alt="Border collie saltando obstáculo de agility"
-                className="w-full h-[160px] lg:h-[195px] object-cover rounded-2xl"
-              />
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {pasos.map((p, i) => (
+            <div key={i} className="relative">
+              <div className="bg-white border border-[#F0D9CC] rounded-2xl p-7 text-center h-full">
+                <span className="text-4xl mb-5 block">{p.icon}</span>
+                <h3 className="mb-3 text-lg" style={{ fontFamily: "'Playfair Display', serif" }}>{p.title}</h3>
+                <p className="text-[#6B4C3A] text-[15px] leading-[1.75]">{p.desc}</p>
+              </div>
+              {i < pasos.length - 1 && (
+                <div className="hidden md:flex absolute top-1/2 -right-4 z-10 w-8 h-8 bg-[#D4522A] text-white items-center justify-center rounded-full text-sm font-black" style={{ transform: "translateY(-50%)" }}>→</div>
+              )}
             </div>
-            {/* Columna derecha: 1 imagen grande */}
-            <img
-              src="/images/programa-grande.webp"
-              alt="Adiestrador con border collie en sesión de obediencia"
-              className="w-full h-[335px] lg:h-[410px] object-cover rounded-2xl"
-            />
-          </div>
-
-          {/* Derecha: texto */}
-          <div>
-            <h2 className="font-black text-[#3CB371] text-2xl lg:text-[36px] leading-tight mb-5">
-              Programas de Adiestramiento
-            </h2>
-            <p className="text-[#666] text-[15px] leading-[1.85]">
-              Desde la obediencia básica hasta el agility avanzado y el trabajo de comportamiento. Nuestros programas están diseñados para cada etapa de vida de tu perro, con métodos positivos y resultados reales.
-            </p>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

@@ -1,39 +1,82 @@
-﻿@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --c-dark: #2E8B57;
-  --c-mid: #3CB371;
-  --c-light: #55DB90;
-  --c-pale: #f0faf5;
+  --c-cream:   #FFF9F4;
+  --c-cream2:  #FFF4EE;
+  --c-border:  #F0D9CC;
+  --c-brand:   #D4522A;
+  --c-dark:    #2D1A0E;
+  --c-muted:   #8B3A1E;
+  --c-text:    #3D1A0A;
+  --c-grey:    #6B4C3A;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Nunito Sans', sans-serif; color: #555; background: #fff; overflow-x: hidden; }
-h1, h2, h3, h4 { font-family: 'Nunito', sans-serif; }
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--c-text);
+  background: var(--c-cream);
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--c-dark); }
 
 .wrap { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
 @layer components {
-  .btn-green {
-    @apply inline-flex items-center justify-center bg-[#3CB371] text-white font-bold text-sm px-7 py-3 rounded-lg hover:bg-[#2E8B57] active:scale-95 transition-all duration-200 focus-visible:outline-none;
-    box-shadow: #2E8B57 6px 0 0 0;
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm text-white px-8 py-4 rounded-full transition-all duration-200 active:scale-95;
+    background: #D4522A;
+    box-shadow: 0 4px 20px rgba(212,82,42,0.40);
   }
-  .btn-outline-green {
-    @apply inline-flex items-center justify-center border-2 border-[#3CB371] text-[#3CB371] font-bold text-sm px-7 py-[10px] rounded-lg hover:bg-[#3CB371] hover:text-white active:scale-95 transition-all duration-200;
+  .btn-primary:hover { background: #B33D1F; box-shadow: 0 6px 24px rgba(212,82,42,0.50); transform: translateY(-1px); }
+
+  .btn-wa {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm text-white px-8 py-4 rounded-xl transition-all duration-200 active:scale-95;
+    background: #25D366;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  }
+  .btn-wa:hover { background: #1DA851; transform: translateY(-1px); }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-sm px-7 py-3.5 rounded-full border-2 transition-all duration-200;
+    border-color: #D4522A;
+    color: #D4522A;
+  }
+  .btn-outline:hover { background: #D4522A; color: white; }
+
+  .section-tag {
+    @apply inline-block text-xs font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full mb-4;
+    background: rgba(212,82,42,0.12);
+    color: #D4522A;
   }
 }
 
+@keyframes trustScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-trust {
+  animation: trustScroll 22s linear infinite;
+  width: max-content;
+  display: flex;
+  gap: 0;
+}
+.animate-trust:hover { animation-play-state: paused; }
+
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 60s linear infinite;
+  animation: marquee 40s linear infinite;
   width: max-content;
+  display: flex;
 }
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
+.animate-marquee:hover { animation-play-state: paused; }
