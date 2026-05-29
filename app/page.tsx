@@ -8,6 +8,7 @@ import FeatureSplit from "@/components/landing/FeatureSplit";
 import Calculator from "@/components/landing/Calculator";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
+import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Calculator />
       <Testimonials />
       <FAQ />
+      <Contact />
       <Footer />
     </main>
   );
