@@ -1,59 +1,62 @@
 export default function About() {
   return (
-    <section id="nosotros" className="py-20 lg:py-28 bg-white">
+    <section id="nosotros" className="py-20 lg:py-28 bg-[#faf8f5]">
       <div className="wrap">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          {/* Imagen */}
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=700&h=560&fit=crop&crop=center"
-              alt="Antonio — educador canino en Sevilla"
-              className="w-full h-[420px] lg:h-[500px] object-cover rounded-3xl shadow-xl"
-            />
-            {/* Badge */}
-            <div className="absolute bottom-6 left-6 bg-white rounded-2xl px-5 py-3 shadow-lg flex items-center gap-3">
-              <span className="text-2xl">⭐</span>
-              <div>
-                <p className="font-black text-[#1a1a1a] text-sm leading-tight">4.6 ★ en Google</p>
-                <p className="text-[#888] text-xs">14 reseñas verificadas</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Texto */}
-          <div>
-            <span className="text-[#3CB371] text-xs font-bold uppercase tracking-[0.22em] mb-3 block">
-              Quién soy
+          {/* Izquierda: texto */}
+          <div className="lg:pt-6">
+            <span className="inline-block text-xs font-bold uppercase tracking-[0.18em] text-[#3CB371] bg-[#e8f5ee] px-4 py-1.5 rounded-full mb-5">
+              El educador
             </span>
-            <h2 className="font-black text-[#1a1a1a] text-3xl lg:text-[38px] leading-tight mb-6">
-              Antonio, educador canino en <span className="text-[#3CB371]">Sevilla</span>
+            <h2 className="font-black text-[#1a1a1a] leading-tight mb-6" style={{ fontSize: "clamp(28px, 4vw, 44px)" }}>
+              Hola, soy <span className="text-[#3CB371] italic">Antonio</span>
             </h2>
             <p className="text-[#666] text-[15px] leading-[1.85] mb-5">
-              Soy Antonio, educador canino en Sevilla. Trabajo con perros de todas las razas y edades desde la comprensión del animal y el refuerzo positivo. No existen perros "difíciles" — existen perros que necesitan la metodología correcta y dueños que quieren aprender.
+              Soy educador canino en Sevilla. Mi enfoque parte de entender cómo piensa y siente tu perro — desde ahí construimos una relación sólida, no solo comandos. Priorizo la conexión y la empatía porque creo que un perro que confía aprende mejor y más rápido.
             </p>
             <p className="text-[#666] text-[15px] leading-[1.85] mb-8">
-              Mi trabajo no termina con el perro: enseño a los dueños cómo mantener lo aprendido en casa. El cambio real llega cuando toda la familia entiende al perro y sabe cómo comunicarse con él.
+              Trabajo sin castigos ni herramientas coercitivas. Mi trabajo no termina con el perro: te enseño a ti también para que puedas continuar en casa. El cambio real viene cuando toda la familia entiende al animal.
             </p>
 
-            <ul className="space-y-4">
-              {[
-                { icon: "✅", text: "Metodología positiva — sin castigos ni correcciones" },
-                { icon: "✅", text: "Sesiones individuales adaptadas a cada perro y situación" },
-                { icon: "✅", text: "Formación para los dueños incluida en cada sesión" },
-              ].map(({ icon, text }) => (
-                <li key={text} className="flex items-start gap-3 text-[15px] text-[#444]">
-                  <span className="text-[#3CB371] font-bold shrink-0">{icon}</span>
-                  {text}
-                </li>
+            <div className="flex flex-wrap gap-3">
+              {["🐾 Educación positiva", "⭐ 4.6 estrellas", "💛 Sin coerción"].map(t => (
+                <span key={t} className="text-sm font-semibold text-[#444] border border-[#ddd] rounded-full px-4 py-1.5 bg-white">
+                  {t}
+                </span>
               ))}
-            </ul>
+            </div>
 
             <a href="https://wa.me/34633689653?text=Hola%20Antonio%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20adiestramiento."
-              className="inline-flex items-center gap-2 mt-8 bg-[#3CB371] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#2E8B57] active:scale-95 transition-all duration-200 shadow-lg"
-              target="_blank" rel="noopener noreferrer">
-              Hablar con Antonio →
+              target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-8 bg-[#25d366] text-white font-bold text-sm px-8 py-4 rounded-xl hover:bg-[#1da851] active:scale-95 transition-all duration-200 shadow-lg">
+              <svg viewBox="0 0 448 512" className="w-4 h-4 fill-white shrink-0"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/></svg>
+              Hablar con Antonio
             </a>
+          </div>
+
+          {/* Derecha: imagen + reseña */}
+          <div>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=700&h=560&fit=crop&crop=center"
+                alt="Antonio — educador canino en Sevilla"
+                className="w-full h-[420px] lg:h-[480px] object-cover"
+              />
+              <div className="absolute bottom-4 right-4 bg-[#1b3d2a] text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
+                Sevilla · ES
+              </div>
+            </div>
+
+            {/* Reseña bajo la imagen */}
+            <blockquote className="mt-6 border-l-4 border-[#3CB371] pl-5">
+              <p className="text-[#555] text-[15px] leading-[1.75] italic">
+                "Sin duda, Antonio es un adiestrador que demuestra una habilidad única para atender las necesidades de nuestros perros. Tiene un trato maravilloso humano y 'perruno'."
+              </p>
+              <footer className="mt-3 text-xs text-[#999] font-semibold uppercase tracking-wider">
+                — Tamara C., reseña Google
+              </footer>
+            </blockquote>
           </div>
 
         </div>
